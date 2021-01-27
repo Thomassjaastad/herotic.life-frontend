@@ -9,6 +9,8 @@ logs
 **/*.backup.*
 **/*.back.*
 
+.cache
+.eslintcache
 node_modules
 bower_components
 
