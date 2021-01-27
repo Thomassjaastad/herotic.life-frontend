@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Item } from './Item';
-import { items } from './items';
+import  Item  from './Item';
 
 function App() {
   return (
@@ -9,25 +8,9 @@ function App() {
     <header className="App-header">
       <div></div>
     </header>
-    <Itemlist></Itemlist>
+    <Item/>
   </div>  
   );
-}
-
-function Itemlist() {
-  return (
-    <section className="itemlist">
-      {items.map((item) => {
-        return (
-          <Item key={item.id} item={item}>
-            {" "}
-          </Item>
-        );
-      })}
-    </section>
-  );
-}
-
+};
 
 ReactDOM.render(<App />, document.getElementById("root"));
-
