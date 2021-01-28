@@ -1,48 +1,40 @@
 import { Component } from "react";
+import Button from './Button';
 
-class Item extends Component{
-  constructor(){
+import './Item.css';
+
+
+class Item extends Component {
+  constructor() {
     super();
     this.state = {
-      items:[]
-    }
+      items: [],
+    };
   }
 
-  componentDidMount(){
-    fetch('/items')
-      .then(res => res.json())
-      .then(items => this.setState({items}, () => (items)));
+  componentDidMount() {
+    fetch("/items")
+      .then((res) => res.json())
+      .then((items) => this.setState({ items }, () => items));
   }
+
   render() {
     const { items } = this.state;
     return (
-      <div>
-        {items.map(({ id, title, image, currency,price }) => (
+      <div className="item">
+        {items.map(({ id, title, image, currency, price }) => (
           <div key={id}>
             <img src={image} alt="" />
-            <h4>{title}</h4>
-              <h4>{currency} {price}</h4>
+            <h1>{title}</h1>
+            <h4>
+              {currency} {price}
+            </h4>
+            <Button shadow = {true}>Shop</Button>
           </div>
         ))}
       </div>
     );
   }
 }
-
-
-// export const Item = (props) => {
-  // const { image, title, price, currency } = props.item;
-  // return (
-    // <article className="item">
-      // { <img src={image} alt="" /> }
-      // { <h1> }
-        // { {title} }
-      // { </h1> }
-      // { <h4> }
-        // { {currency} {price} }
-      // { </h4> }
-    //  { </article> }
-  // );
-// };
 
 export default Item;
