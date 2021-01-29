@@ -1,14 +1,15 @@
-.headercenter{
+.headercenter {
+  display: block;
   word-spacing: 1rem;
   margin-left: auto;
   margin-right: auto;
   margin: 2rem auto;
   width: 40%;
   position: relative;
-  left: 8rem;
+  left: 7rem;
 }
 
-.imagetop{
+.imagetop {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -16,7 +17,7 @@
   width: 15%;
 }
 
-.imagecenter{
+.imagecenter {
   display: block;
   margin-left: auto;
   margin-right: auto;
