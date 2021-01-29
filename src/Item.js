@@ -1,7 +1,6 @@
 import { Component } from "react";
 
-import './Item.css';
-
+import "./Item.css";
 
 class Item extends Component {
   constructor() {

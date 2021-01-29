@@ -2,13 +2,13 @@
   width: 90vw;
   max-width: 570px;
   margin: 6rem auto;
-  display : grid;
+  display: grid;
   gap: 3rem;
 }
 
 h1 {
   font: inherit;
-  font-size: medium;   
+  font-size: medium;
 }
 
 h4 {
@@ -16,8 +16,8 @@ h4 {
   margin: 2rem;
 }
 
-@media screen and (min-width:768px){
-  .item{
-      grid-template-columns: repeat(3, 1fr);
+@media screen and (min-width: 768px) {
+  .item {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
