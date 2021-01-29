@@ -1,7 +1,7 @@
 .item {
   width: 90vw;
   max-width: 570px;
-  margin: 10rem auto;
+  margin: 6rem auto;
   display : grid;
   gap: 3rem;
 }
