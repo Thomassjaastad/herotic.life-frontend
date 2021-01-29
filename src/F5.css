@@ -1,0 +1,27 @@
+.heroticFall {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 3rem auto;
+  width: 40%;
+  position: relative;
+  left: 12rem;
+}
+
+.f5image {
+  object-fit: cover;
+  height: auto;
+  width: auto;
+  max-width: 400px;
+  max-height: 300px;
+  display: grid;
+  position: relative;
+  gap: 1rem;
+  left: 8rem;
+}
+
+@media screen {
+  .f5image {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

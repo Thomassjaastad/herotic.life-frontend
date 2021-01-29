@@ -1,9 +1,14 @@
 import React from "react";
+import Bjorg from "./Bjorg";
+import F5 from "./F5";
+import Video from "./Video";
 
 const Archive = () => {
   return (
     <div>
-      <h1>Archive Page</h1>
+      <Bjorg />
+      <F5 />
+      <Video />
     </div>
   );
 };
