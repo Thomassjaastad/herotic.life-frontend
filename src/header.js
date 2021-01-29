@@ -1,14 +1,12 @@
-import { AppBar, Toolbar } from "@material-ui/core";
 import React from "react";
-// import logo from '../public/mingle.png';
+import "./header.css";
 
-import './header.css'
 export default function Header() {
-  
   return (
     <header>
-      <img src = '/mingle.png' alt='herotic' class="center"/>
-      <AppBar>Herotic</AppBar>
+      <img src="/mingle.png" alt="herotic" class="imagetop" />
+      <div className="headercenter">Store Archive Contact Cart</div>
+      <img src="/mingle.png" alt="herotic" class="imagecenter" />
     </header>
   );
 }
