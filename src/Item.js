@@ -1,5 +1,4 @@
 import { Component } from "react";
-import Button from './Button';
 
 import './Item.css';
 
@@ -29,7 +28,7 @@ class Item extends Component {
             <h4>
               {currency} {price}
             </h4>
-            <Button shadow = {true}>Shop</Button>
+            <button className="Button"> Shop </button>
           </div>
         ))}
       </div>
