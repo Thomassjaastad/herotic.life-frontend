@@ -1,9 +1,12 @@
 import React from "react";
+import Socials from "./Socials";
 
 const Contact = () => {
   return (
     <div>
-      <h1>Contact Page</h1>
+      <a href="mailto:herotic.oslo@gmail.com"> herotic.oslo@gmail.com</a>
+      <hr />
+      <Socials />
     </div>
   );
 };
