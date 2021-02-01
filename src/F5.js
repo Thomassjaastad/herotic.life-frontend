@@ -20,16 +20,16 @@ const url = [
 const F5 = () => {
   return (
     <div>
-      <p className="heroticFall">Herotic Fall '18</p>
-      <p className="f5image">
+      <h2 className="heroticFall">Herotic Fall '18</h2>
+      <div className="f5image">
         {url.map((img) => (
-          <img src={img} alt="" class="f5image" />
+          <img src={img} key={img} alt="" />
         ))}
-        <p>
-          <a href="http://www.f5conceptstore.com/" className="urlcenter">
-            http://www.f5conceptstore.com/
-          </a>
-        </p>
+      </div>
+      <p>
+        <a href="http://www.f5conceptstore.com/" className="heroticFall">
+          http://www.f5conceptstore.com/
+        </a>
       </p>
     </div>
   );

@@ -9,19 +9,13 @@
 }
 
 .f5image {
-  object-fit: cover;
-  height: auto;
-  width: auto;
-  max-width: 400px;
-  max-height: 300px;
   display: grid;
-  position: relative;
-  gap: 1rem;
-  left: 8rem;
+  grid-template-columns: repeat(3, 0.1fr);
+  grid-gap: 10px;
+  /* border: 5px solid red; */
 }
 
-@media screen {
-  .f5image {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.f5image img {
+  max-width: 300px;
+  max-height: 300px;
 }
