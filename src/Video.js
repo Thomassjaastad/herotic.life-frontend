@@ -1,11 +1,12 @@
 import React from "react";
-
-import "./Bjorg.css";
+import ReactPlayer from "react-player";
+import "./F5.css";
 
 const Video = () => {
   return (
     <div>
-      <p className="urlcenter"> Herotic - Welcome to paradise </p>
+      <h2 className="heroticFall"> Herotic - Welcome to paradise</h2>
+      <ReactPlayer url="https://vimeo.com/276117504" controls="true" />
     </div>
   );
 };

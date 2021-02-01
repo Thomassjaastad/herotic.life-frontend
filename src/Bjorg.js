@@ -14,7 +14,7 @@ const Bjorg = () => {
       <img
         src="https://www.herotic.life/uploads/1/2/1/8/121808125/editor/41965140-10155886833251376-8306243901790879744-o.jpg?1554790877"
         alt=""
-        class="bjorgcenter"
+        className="bjorgcenter"
       />
       <a
         href="https://bjorgjewellery.com/collections/bjorg-x-herotic"
@@ -24,7 +24,7 @@ const Bjorg = () => {
       </a>
       <p className="bjorgimage">
         {url.map((img) => (
-          <img src={img} alt="" class="bjorgimage" />
+          <img src={img} key={img} alt="" className="bjorgimage" />
         ))}
       </p>
     </div>
