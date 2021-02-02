@@ -1,5 +1,5 @@
 import { Component } from "react";
-
+import { Link } from "react-router-dom";
 import "./Item.css";
 
 class Item extends Component {
@@ -22,12 +22,14 @@ class Item extends Component {
       <div className="item">
         {items.map(({ id, title, image, currency, price }) => (
           <div key={id}>
-            <img src={image} alt="" />
-            <h1>{title}</h1>
-            <h4>
-              {currency} {price}
-            </h4>
-            <button className="Button"> Shop </button>
+            <Link to={`/store/${id}`}>
+              <img src={image} alt="" />
+              <h1>{title}</h1>
+              <h4>
+                {currency} {price}
+              </h4>
+              <button className="Button"> Shop </button>
+            </Link>
           </div>
         ))}
       </div>

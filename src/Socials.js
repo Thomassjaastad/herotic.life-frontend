@@ -1,6 +1,5 @@
 import React from "react";
 
-// url insta = "https://instagram.com/herotic_oslo"
 
 import "./Socials.css";
 

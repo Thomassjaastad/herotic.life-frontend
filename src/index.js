@@ -5,6 +5,7 @@ import Header from "./Header";
 import Contact from "./Contact";
 import Archive from "./Archive";
 import Cart from "./Cart";
+import ItemSpecific from "./ItemSpecific";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/cart">
           <Cart />
         </Route>
+        <Route path="/store/:id" children={<ItemSpecific />}></Route>
       </Switch>
     </Router>
   );
