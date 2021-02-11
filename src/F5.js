@@ -17,20 +17,26 @@ const url = [
   "https://www.herotic.life/uploads/1/2/1/8/121808125/herotic-7.jpg",
 ];
 
+const imageHolder = (imgSrc) => ({
+  backgroundImage: `url(${imgSrc})`,
+});
+
 const F5 = () => {
   return (
     <div>
       <h2 className="heroticFall">Herotic Fall '18</h2>
-      <div className="f5image">
+      <div className="f5container">
         {url.map((img) => (
-          <img src={img} key={img} alt="" />
+          <a href={img}>
+            <div style={imageHolder(img)} className="imageHolder1"></div>
+          </a>
         ))}
       </div>
-      <p>
-        <a href="http://www.f5conceptstore.com/" className="heroticFall">
+      <strong>
+        <a href="http://www.f5conceptstore.com/" className="f5url">
           http://www.f5conceptstore.com/
         </a>
-      </p>
+      </strong>
     </div>
   );
 };

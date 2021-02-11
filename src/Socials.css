@@ -1,5 +1,11 @@
-.image {
+.icon {
   width: 2%;
-  height: 100%;
-  object-fit: contain;
+  height: auto;
+}
+
+.box {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  padding: 2em;
 }

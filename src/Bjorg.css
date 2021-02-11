@@ -1,37 +1,37 @@
 .bjorgcenter {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin: 2rem auto;
-  width: 60%;
-  position: relative;
+  width: 100%;
 }
 
 .urlcenter {
   display: block;
-  word-spacing: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin: 2rem auto;
-  align-items: "center";
-  width: 40%;
-  position: relative;
-  left: 4rem;
+  margin: 2em 1em 3em 1em;
+  font-family: "Courier New", sans-serif;
+  color: #b9b9b9;
+  text-decoration: none;
+  text-align: center;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.urlcenter:hover {
+  color: black;
+  opacity: 0.6;
 }
 
 .bjorgimage {
-  height: auto;
-  width: auto;
-  max-width: 300px;
+  margin-left: 0.5em;
+  margin-right: 0.1em;
+  max-width: 330px;
   max-height: 300px;
-  display: grid;
-  position: relative;
-  gap: 1rem;
-  left: 5rem;
 }
 
+p {
+  display: flex;
+  justify-content: center;
+}
 @media screen {
-  .bjorgimage {
+  p {
     grid-template-columns: repeat(3, 1fr);
   }
 }

@@ -4,6 +4,7 @@ import F5 from "./F5";
 import Video from "./Video";
 import Socials from "./Socials";
 
+import "./HorisontalLine.css";
 const Archive = () => {
   return (
     <div>
@@ -13,7 +14,7 @@ const Archive = () => {
       <Video />
       <hr />
       <Socials />
-      <hr />
+      <hr style={{ marginBottom: `5em`, marginTop: `2em`, width: `100%` }} />
     </div>
   );
 };

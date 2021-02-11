@@ -22,7 +22,7 @@ const Bjorg = () => {
       >
         https://bjorgjewellery.com/collections/bjorg-x-herotic
       </a>
-      <p className="bjorgimage">
+      <p>
         {url.map((img) => (
           <img src={img} key={img} alt="" className="bjorgimage" />
         ))}

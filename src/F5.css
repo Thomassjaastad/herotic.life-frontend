@@ -1,21 +1,47 @@
 .heroticFall {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin: 3rem auto;
-  width: 40%;
-  position: relative;
-  left: 12rem;
+  margin: 3em 2em 1em 1em;
+  font-family: "Courier New", sans-serif;
+  color: black;
+  text-align: center;
+}
+
+.f5url {
+  display: block;
+  margin: 3em 1em 1em 1em;
+  font-family: "Courier New";
+  font-size: 16px;
+  color: #b9b9b9;
+  text-align: center;
+  text-decoration: none;
+  opacity: 1;
+  transition: 0.3s;
+  letter-spacing: 0.05em;
+}
+
+.f5url:hover {
+  color: black;
+  opacity: 0.6;
+}
+
+.f5container {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 0.5em;
+  column-gap: 0.5em;
+  justify-items: center;
+  margin: 0 auto;
+}
+
+.imageHolder1 {
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 330px;
+  height: 220px;
+  background-size: cover;
 }
 
 .f5image {
-  display: grid;
-  grid-template-columns: repeat(3, 0.1fr);
-  grid-gap: 10px;
-  /* border: 5px solid red; */
-}
-
-.f5image img {
-  max-width: 300px;
-  max-height: 300px;
+  border: solid 1px blue;
 }
