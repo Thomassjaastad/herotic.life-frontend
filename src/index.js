@@ -5,11 +5,13 @@ import Header from "./Header";
 import Contact from "./Contact";
 import Archive from "./Archive";
 import Cart from "./Cart";
+import QuantityButton from "./QuantityButton";
 import ItemSpecific from "./ItemSpecific";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import "./index.css";
+import "./mingleImage.css";
 
 function App() {
   return (
@@ -17,7 +19,9 @@ function App() {
       <Header />
       <Switch>
         <Route exact path="/">
-          <img src="/mingle.png" alt="herotic" className="imagecenter" />
+          <div className="container">
+            <img src="/mingle.png" alt="herotic" className="image" />
+          </div>
           <Item />
         </Route>
         <Route path="/archive">
@@ -29,7 +33,10 @@ function App() {
         <Route path="/cart">
           <Cart />
         </Route>
-        <Route path="/store/:id" children={<ItemSpecific />}></Route>
+        <Route path="/store/:uniqueId" children={<ItemSpecific />}></Route>
+        <Route path="/counter">
+          <QuantityButton />
+        </Route>
       </Switch>
     </Router>
   );

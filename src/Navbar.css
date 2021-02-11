@@ -1,0 +1,33 @@
+ul {
+  display: inline-block;
+  vertical-align: top;
+  list-style-type: none;
+  text-transform: uppercase;
+}
+
+li {
+  display: inline-block;
+  position: relative;
+  padding: 5px 15px;
+  font-family: "Quattrocento Sans", sans-serif;
+  font-size: 13px;
+  color: #b9b9b9;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0.07em;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+li:hover {
+  color: #333333;
+  opacity: 0.6;
+}
+
+.nav {
+  /* border: 1px solid; */
+  margin: auto;
+  text-align: center;
+  width: auto;
+  max-width: 960px;
+}

@@ -1,20 +1,21 @@
 .headercenter {
   display: block;
-  word-spacing: 1rem;
   margin-left: auto;
   margin-right: auto;
   margin: 2rem auto;
   width: 40%;
   position: relative;
-  left: 7rem;
+  padding: 1rem 0rem;
 }
 
 .imagetop {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 1.5em;
+  padding-bottom: 0.5em;
   margin: 1rem auto;
-  width: 15%;
+  width: 15.5%;
 }
 
 .imagecenter {

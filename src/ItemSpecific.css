@@ -1,0 +1,39 @@
+.container {
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.subcontainer {
+  width: 50%;
+  margin: auto;
+  display: grid;
+}
+
+h2 {
+  font-family: "Courier New";
+}
+
+span {
+  font-family: "Quattrocento Sans", sans-serif;
+}
+
+p {
+  font-family: "Courier New";
+  color: #515151;
+}
+
+label {
+  font-family: "Quattrocento Sans", sans-serif;
+  color: #3e3e3e;
+}
+
+@font-face {
+  font-family: "Quattrocento Sans";
+  src: local("Quattrocento Sans"),
+    url(./fonts/Quattrocento_Sans/QuattrocentoSans-Regular.ttf)
+      format("opentype");
+}
+
+.modal-title {
+  font-family: Quattrocento;
+}

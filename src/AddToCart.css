@@ -1,0 +1,22 @@
+.btn {
+  text-transform: uppercase;
+  border-radius: #b9b9b9b9 2px;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  background: #b9b9b9b9;
+  font-family: "Quattrocento Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 12px;
+}
+
+@font-face {
+  font-family: "Quattrocento Sans";
+  src: local("Quattrocento Sans"),
+    url(./fonts/Quattrocento_Sans/QuattrocentoSans-Regular.ttf)
+      format("opentype");
+}
+
+.modal-title {
+  font-family: Quattrocento;
+}

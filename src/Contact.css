@@ -1,0 +1,15 @@
+.strong {
+  font-family: "Courier New", sans-serif;
+  text-transform: none;
+  color: #b9b9b9;
+  opacity: 1;
+  letter-spacing: 0.05em;
+  transition: 0.3s;
+  margin: 1em;
+  text-align: center;
+}
+
+.strong:hover {
+  color: black;
+  opacity: 0.6;
+}
