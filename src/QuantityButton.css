@@ -1,0 +1,49 @@
+.arrow {
+  border: solid #3e3e3e;
+  border-width: 0 0.2rem 0.2rem 0;
+  display: inline-block;
+  padding: 0.2em;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.box {
+  width: 5rem;
+  height: 2rem;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding: 1em;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+.header {
+  float: left;
+  white-space: nowrap;
+}
+
+.btn-group button {
+  float: right;
+  padding: 0.5em;
+  margin: 0.5em;
+  background-color: white;
+  cursor: pointer; /* Pointer/hand icon */
+  display: block; /* Make the buttons appear below each other */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: grey;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  opacity: 1;
+}

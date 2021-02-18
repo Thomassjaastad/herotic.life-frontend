@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./ItemSpecific.css";
 import "./AddToCart.css";
+import { ProductContext } from "./ProductContext";
 
 function ItemSpecific() {
+  const { setCart } = useContext(ProductContext);
   const [items, setItems] = useState([]);
   const [quantity, setQuantity] = useState(0);
   const [error, setError] = useState(null);
@@ -24,7 +26,6 @@ function ItemSpecific() {
         }
       );
   }, [uniqueId]);
-
   const { id, image, title, price, currency } = items;
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -44,21 +45,22 @@ function ItemSpecific() {
         <label>Quantity</label>
         <div>
           <input
-            className="box"
+            style={{ padding: `1em`, marginBottom: `0.5em` }}
             type="number"
             id="Value"
             placeholder=""
             min="0"
+            onChange={(event) => setQuantity(event.target.value)}
           />
         </div>
         <div>
           <button
             className="btn"
             onClick={() => {
-              setQuantity(document.getElementById("Value").value);
-              console.log(
-                `you added ${quantity} items to the cart with id ${id}`
-              );
+              setCart((prevState) => [
+                ...prevState,
+                { id: id, quantity: parseInt(quantity) },
+              ]);
             }}
           >
             add to cart

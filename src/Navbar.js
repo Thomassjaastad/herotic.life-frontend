@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import "./Navbar.css";
+import { ProductContext } from "./ProductContext";
+
 const Navbar = () => {
+  const { cart } = useContext(ProductContext);
+  const totCart = cart.reduce(function (acc, obj) {
+    return acc + obj.quantity;
+  }, 0);
   return (
     <div className="nav">
       <ul>
@@ -33,7 +39,7 @@ const Navbar = () => {
         <li>
           <Link to="/cart" style={{ color: "inherit", textDecoration: "none" }}>
             {" "}
-            cart{" "}
+            cart ({totCart}){" "}
           </Link>
         </li>
       </ul>

@@ -18,6 +18,7 @@ span {
 }
 
 p {
+  display: block;
   font-family: "Courier New";
   color: #515151;
 }

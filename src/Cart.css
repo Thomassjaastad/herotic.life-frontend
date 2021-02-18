@@ -1,0 +1,35 @@
+.placeholder1 {
+  font-family: "Quattrocento Sans", sans-serif;
+  font-size: 21px;
+  color: #3e3e3e;
+  padding: 1em 1em 2em 2em;
+  margin: 0em 6em 0em 6em;
+}
+
+.placeholder {
+  font-family: "Quattrocento Sans", sans-serif;
+  font-size: 18px;
+  color: #3e3e3e;
+  opacity: 1;
+  transition: 0.3s;
+  padding: 2em;
+  display: block;
+  text-align: center;
+}
+
+.placeholder3 {
+  font-family: "Quattrocento Sans", sans-serif;
+  color: #3e3e3e;
+  padding: 2em;
+  display: block;
+}
+
+.placeholder:hover {
+  color: black;
+  opacity: 0.6;
+}
+
+td {
+  font-size: 14px;
+  padding: 1em 0em 1em 0em;
+}
