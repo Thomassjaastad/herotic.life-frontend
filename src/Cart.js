@@ -37,8 +37,8 @@ const Cart = () => {
   function removeItem(id) {
     const updateCart = cart.filter((item) => item.id !== id);
     setCart(updateCart);
-    // const updateItems = items.filter((item) => item.id !== id);
-    // setItems(updateItems);
+    const updateItems = items.filter((item) => item.id !== id);
+    setItems(updateItems);
   }
 
   const calcTotal = (qty, price) => {
@@ -66,7 +66,7 @@ const Cart = () => {
               ))}
             </tr>
             {items.map(({ id, title, price, currency, image }, index) => (
-              <tr key={id}>
+              <tr key={index}>
                 <td>
                   <img
                     src={image}
@@ -86,7 +86,7 @@ const Cart = () => {
                 <td>
                   <input
                     type="text"
-                    value={cart[index].quantity}
+                    value={cart[index].quantity} //change qty here
                     onChange={() => {}}
                   />
                   <button type="button" onClick={() => removeItem(id)}>
