@@ -6,7 +6,7 @@ import "./AddToCart.css";
 import { ProductContext } from "./ProductContext";
 
 function ItemSpecific() {
-  const { setCart } = useContext(ProductContext);
+  const { cart, setCart } = useContext(ProductContext);
   const [items, setItems] = useState([]);
   const [quantity, setQuantity] = useState(0);
   const [error, setError] = useState(null);
@@ -33,6 +33,8 @@ function ItemSpecific() {
   if (!isLoaded) {
     return <div>Loading...</div>;
   }
+  console.log(cart);
+  console.log(typeof quantity);
   return (
     <div className="container">
       <img src={image} alt="" style={{ float: `left` }} className="product" />
@@ -50,17 +52,25 @@ function ItemSpecific() {
             id="Value"
             placeholder=""
             min="0"
-            onChange={(event) => setQuantity(event.target.value)}
+            onChange={(event) => setQuantity(parseInt(event.target.value))}
           />
         </div>
         <div>
           <button
             className="btn"
             onClick={() => {
-              setCart((prevState) => [
-                ...prevState,
-                { id: id, quantity: parseInt(quantity) },
-              ]);
+              setCart((prevState) => {
+                const idx = prevState.findIndex((item) => item.id === id);
+                if (idx !== -1) {
+                  return [
+                    ...prevState.slice(0, idx),
+                    { id, quantity: prevState[idx].quantity + quantity },
+                    ...prevState.slice(idx + 1),
+                  ];
+                } else {
+                  return [...prevState, { id, quantity }];
+                }
+              });
             }}
           >
             add to cart
