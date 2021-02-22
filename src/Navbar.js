@@ -6,6 +6,7 @@ import { ProductContext } from "./ProductContext";
 
 const Navbar = () => {
   const { cart } = useContext(ProductContext);
+  console.log("navbar", cart);
   const totCart = cart.reduce(function (acc, obj) {
     return acc + obj.quantity;
   }, 0);

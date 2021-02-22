@@ -33,8 +33,6 @@ function ItemSpecific() {
   if (!isLoaded) {
     return <div>Loading...</div>;
   }
-  console.log(cart);
-  console.log(typeof quantity);
   return (
     <div className="container">
       <img src={image} alt="" style={{ float: `left` }} className="product" />
