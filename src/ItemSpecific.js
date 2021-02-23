@@ -6,7 +6,7 @@ import "./AddToCart.css";
 import { ProductContext } from "./ProductContext";
 
 function ItemSpecific() {
-  const { cart, setCart } = useContext(ProductContext);
+  const { setCart } = useContext(ProductContext);
   const [items, setItems] = useState([]);
   const [quantity, setQuantity] = useState(0);
   const [error, setError] = useState(null);
