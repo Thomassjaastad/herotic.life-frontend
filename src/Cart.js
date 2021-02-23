@@ -1,18 +1,16 @@
-import React, { useContext, useState, useEffect, useRef } from "react";
+import React from "react";
 import { ProductContext } from "./ProductContext";
 import CheckoutEmptyTable from "./CheckoutEmptyTable";
-
+import CartRowHeader from "./CartRowHeader";
+import CartRow from "./CartRow";
 import "./Cart.css";
 
-const header = ["Items", "Price", "Qty", "Total"];
-
 const Cart = () => {
-  const [items, setItems] = useState([]);
-  const [error, setError] = useState(null);
-  const inputRef = useRef();
-  const [isLoaded, setIsLoaded] = useState(false);
-  const { cart, setCart } = useContext(ProductContext);
-  useEffect(() => {
+  const [items, setItems] = React.useState([]);
+  const [error, setError] = React.useState(null);
+  const [isLoaded, setIsLoaded] = React.useState(false);
+  const { cart } = React.useContext(ProductContext);
+  React.useEffect(() => {
     if (cart.length === 0) {
       return;
     }
@@ -32,16 +30,6 @@ const Cart = () => {
       );
   }, [cart]);
 
-  function removeItem(index) {
-    setCart((prevState) => {
-      return [...prevState.slice(0, index), ...prevState.slice(index + 1)];
-    });
-  }
-
-  const calcTotal = (qty, price) => {
-    return qty * price;
-  };
-
   if (cart.length === 0) {
     return <CheckoutEmptyTable />;
   }
@@ -51,86 +39,40 @@ const Cart = () => {
   if (!isLoaded) {
     return <div>Loading...</div>;
   }
-  const sumQty = cart.reduce(function (acc, obj) {
-    return acc + obj.quantity;
-  }, 0);
-  console.log("cart info", cart);
+  let subTotal = 0;
   return (
     <>
       <div className="placeholder3">
         <h1 style={{ fontSize: "21px" }}>Shopping Cart</h1>
         <table>
           <tbody>
-            <tr>
-              {header.map((colName, index) => (
-                <th key={index}> {colName.toUpperCase()}</th>
-              ))}
-            </tr>
-            {/* {items.map(({ id, title, price, currency, image }, index) => { */}
+            <CartRowHeader />
             {cart.map(({ id, quantity }, index) => {
               const found = items.find(({ id: idx }) => idx === id);
               if (!found) return null;
 
               const { title, price, currency, image } = found;
 
+              subTotal += quantity * price;
               return (
-                <tr key={index}>
-                  <td>
-                    <img
-                      src={image}
-                      alt=""
-                      style={{
-                        width: "82px",
-                        height: "82px",
-                      }}
-                    />
-                  </td>
-                  <td>
-                    {title} <br /> Shipping, or in-store pickup
-                  </td>
-                  <td>
-                    {currency} {price},00
-                  </td>
-                  <td>
-                    <input
-                      ref={inputRef}
-                      type="text"
-                      defaultValue={quantity}
-                      onBlur={(event) => {
-                        let val;
-                        if (parseInt(event.target.value, 10) > 0) {
-                          val = parseInt(event.target.value, 10);
-                        } else {
-                          val = 1;
-                        }
-                        inputRef.current.value = val;
-                        console.log(inputRef.current);
-
-                        setCart((prevState) => {
-                          return [
-                            ...prevState.slice(0, index),
-                            { id, quantity: val },
-                            ...prevState.slice(index + 1),
-                          ];
-                        });
-                      }}
-                      min={1}
-                    />
-
-                    <button type="button" onClick={() => removeItem(index)}>
-                      Delete item
-                    </button>
-                  </td>
-                  <td>
-                    {currency} {calcTotal(quantity, price)},00
-                  </td>
-                </tr>
+                <CartRow
+                  key={id}
+                  title={title}
+                  price={price}
+                  currency={currency}
+                  image={image}
+                  index={index}
+                  quantity={quantity}
+                  id={id}
+                />
               );
             })}
+            <tr>
+              <td>Subtotal {subTotal},00</td>
+            </tr>
           </tbody>
         </table>
       </div>
-      <h1>You have added {sumQty} items to the cart</h1>
     </>
   );
 };
