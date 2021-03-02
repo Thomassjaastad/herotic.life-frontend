@@ -1,32 +1,23 @@
 import React from "react";
-import ReadMoreReturnPolicy from "./ReadMoreReturnPolicy";
 import EmptyShoppingCartHeader from "./EmptyShoppingCartHeader";
-import CheckoutHelpfullInformation from "./CheckoutHelpfulInformation";
-
+import ShippingInfoButton from "./ShippingInfoButton";
+import ReturnPolicyButton from "./ReturnPolicyButton";
 const CheckoutEmptyTable = () => {
-  const [readMoreReturnPolicy, setReadMoreReturnPolicy] = React.useState(false);
-  if (readMoreReturnPolicy) {
-    return (
-      <div>
-        <EmptyShoppingCartHeader />
-        <CheckoutHelpfullInformation
-          readMoreReturnPolicy={readMoreReturnPolicy}
-          setReadMoreReturnPolicy={setReadMoreReturnPolicy}
-        />
-        <ReadMoreReturnPolicy />
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <EmptyShoppingCartHeader />
-        <CheckoutHelpfullInformation
-          readMoreReturnPolicy={readMoreReturnPolicy}
-          setReadMoreReturnPolicy={setReadMoreReturnPolicy}
-        />
-      </div>
-    );
-  }
+  return (
+    <>
+      <EmptyShoppingCartHeader />
+      <div className="placeholder1">Helpful Information</div>
+      <ul>
+        <li>
+          <ReturnPolicyButton />
+        </li>
+        <br />
+        <li>
+          <ShippingInfoButton />
+        </li>
+      </ul>
+    </>
+  );
 };
 
 export default CheckoutEmptyTable;
