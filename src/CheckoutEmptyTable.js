@@ -1,46 +1,32 @@
 import React from "react";
-
-import { Link } from "react-router-dom";
+import ReadMoreReturnPolicy from "./ReadMoreReturnPolicy";
+import EmptyShoppingCartHeader from "./EmptyShoppingCartHeader";
+import CheckoutHelpfullInformation from "./CheckoutHelpfulInformation";
 
 const CheckoutEmptyTable = () => {
-  return (
-    <div className="placeholder1">
-      Shopping Cart
-      <div className="placeholder">
-        There are no items in your shopping cart.
-        <br />
-        <Link
-          to="/"
-          style={{
-            color: "#B9B9B9",
-            textDecoration: "none",
-          }}
-        >
-          Continue Shopping
-        </Link>
+  const [readMoreReturnPolicy, setReadMoreReturnPolicy] = React.useState(false);
+  if (readMoreReturnPolicy) {
+    return (
+      <div>
+        <EmptyShoppingCartHeader />
+        <CheckoutHelpfullInformation
+          readMoreReturnPolicy={readMoreReturnPolicy}
+          setReadMoreReturnPolicy={setReadMoreReturnPolicy}
+        />
+        <ReadMoreReturnPolicy />
       </div>
-      <hr style={{ width: `100%`, marginBottom: `2em` }} />
-      Helpful Information
-      <div
-        style={{
-          color: "#B9B9B9",
-          fontSize: "15px",
-          padding: "4em 0em 2em",
-        }}
-      >
-        Return Policy <br />
+    );
+  } else {
+    return (
+      <div>
+        <EmptyShoppingCartHeader />
+        <CheckoutHelpfullInformation
+          readMoreReturnPolicy={readMoreReturnPolicy}
+          setReadMoreReturnPolicy={setReadMoreReturnPolicy}
+        />
       </div>
-      <div
-        style={{
-          color: "#B9B9B9",
-          fontSize: "15px",
-          padding: "0em 0em 2em",
-        }}
-      >
-        Shipping Info
-      </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default CheckoutEmptyTable;
